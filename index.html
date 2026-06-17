@@ -6,6 +6,7 @@
 <title>Begusarai Multispeciality Hospital Pvt. Ltd. | Healing Lives, Building Trust</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -18,7 +19,7 @@ p, li { color: #475569; line-height: 1.8; }
   --teal:#0F766E; --teal-dark:#0A5954; --teal-mid:#14837A; --teal-light:#CCFBF1; --teal-pale:#F0FDF9;
   --crimson:#C1121F; --crimson-dark:#8B0000; --crimson-light:#FEE2E2;
   --orchid:#8B5CF6; --orchid-dark:#6D28D9; --orchid-light:#EDE9FE; --orchid-pale:#F5F3FF;
-  --gold:#C8A96B; --gold-dark:#A08040; --gold-light:#FDF4DC; --gold-pale:#FFFBF0;
+  --gold:#d4af37; --gold-dark:#B8860B; --gold-light:#FDF4DC; --gold-pale:#FFFBF0;
   --bg:#F8FAFC; --white:#FFFFFF;
   --gray-50:#F8FAFC; --gray-100:#F1F5F9; --gray-200:#E2E8F0; --gray-300:#CBD5E1;
   --gray-500:#64748B; --gray-600:#475569; --gray-700:#334155; --gray-800:#1E293B;
@@ -28,6 +29,11 @@ p, li { color: #475569; line-height: 1.8; }
   --ease:cubic-bezier(.4,0,.2,1); --transition:all .28s var(--ease);
 }
 
+/* LUCIDE ICONS */
+.lucide { stroke-width: 1.75; width: 24px; height: 24px; transition: all 0.3s ease; display: inline-block; vertical-align: middle; }
+.lucide-sm { width: 18px; height: 18px; }
+.lucide-lg { width: 28px; height: 28px; }
+
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--gray-100)}
 ::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px}
@@ -36,8 +42,11 @@ p, li { color: #475569; line-height: 1.8; }
 .fade-up.visible{opacity:1;transform:none}
 
 /* EMERGENCY BAR */
-.emergency-bar{background:#7d1a29;color:#fff;text-align:center;padding:5px 1rem;font-size:.75rem;font-weight:600;letter-spacing:.06em;position:relative;z-index:300}
-.pulse-dot{display:inline-block;width:7px;height:7px;background:#fff;border-radius:50%;margin-right:7px;animation:pulseAnim 1.5s ease-in-out infinite}
+.emergency-bar{background:#7d1a29;color:#fff;text-align:center;padding:8px 1rem;font-size:.75rem;font-weight:600;letter-spacing:.06em;position:relative;z-index:300;display:flex;flex-direction:column;align-items:center;gap:6px;line-height:1.4}
+.emergency-bar .eb-div, .emr-vent{display:none}
+.eb-group{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.eb-div-inner{margin:0 6px;opacity:.5}
+.pulse-dot{display:inline-block;width:7px;height:7px;background:#fff;border-radius:50%;animation:pulseAnim 1.5s ease-in-out infinite}
 @keyframes pulseAnim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
 .emergency-bar a{color:#FECACA;text-decoration:none;font-weight:700;transition:color .2s}
 .emergency-bar a:hover{color:#fff;text-decoration:underline}
@@ -48,7 +57,7 @@ p, li { color: #475569; line-height: 1.8; }
 .nav-inner{max-width:1260px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:72px}
 .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .nav-logo img{height:54px;width:auto;display:block;object-fit:contain}
-.nav-links{display:flex;align-items:center;gap:1.2rem;list-style:none}
+.nav-links{display:none;align-items:center;gap:1.2rem;list-style:none}
 .nav-links a{display:inline-block;padding:.3rem 0;font-size:.8rem;font-weight:600;color:var(--navy);text-decoration:none;transition:color 0.2s ease;white-space:nowrap;position:relative}
 .nav-links a::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:50%;background:var(--teal);transition:all 0.3s ease;transform:translateX(-50%);border-radius:2px}
 .nav-links a:hover{color:var(--teal);background:transparent}
@@ -61,7 +70,7 @@ p, li { color: #475569; line-height: 1.8; }
 .nav-emr-btn{background:transparent!important;color:var(--crimson)!important;border:1.5px solid var(--crimson)!important;border-radius:50px!important;padding:.48rem 1.4rem!important;font-weight:600!important;font-size:.8rem!important;transition:all 0.3s ease!important;box-shadow:0 4px 12px rgba(220,38,38,.1)!important}
 .nav-emr-btn:hover{background:var(--crimson)!important;color:#fff!important;box-shadow:0 6px 16px rgba(220,38,38,.3)!important;transform:translateY(-2px)!important}
 .nav-emr-btn::after{display:none!important}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.hamburger{display:block;background:none;border:none;cursor:pointer;padding:12px;flex-shrink:0}
 .hamburger span{display:block;width:22px;height:2px;background:var(--navy);margin:4px 0;transition:var(--transition);border-radius:2px}
 .mobile-menu{display:none;background:#fff;border-bottom:1px solid var(--gray-200);padding:.75rem 1.5rem 1.25rem}
 .mobile-menu.open{display:block}
@@ -69,34 +78,46 @@ p, li { color: #475569; line-height: 1.8; }
 .mobile-menu a:last-child{border:none;color:var(--teal);font-weight:700}
 
 /* HERO */
-.hero{min-height:90vh;background:linear-gradient(140deg,#071421 0%,#0f2840 40%,#093530 100%);position:relative;overflow:hidden;display:flex;align-items:center}
-.hero-glow-t{position:absolute;right:-5%;top:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,150,140,.15) 0%,transparent 70%);filter:blur(40px)}
-.hero-glow-o{position:absolute;left:-10%;bottom:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(160,110,250,.1) 0%,transparent 70%);filter:blur(40px)}
-.hero-grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:60px 60px}
-.hero-gold-line{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,rgba(200,169,107,.8),transparent);opacity:.8;box-shadow:0 0 15px rgba(200,169,107,.5)}
-.hero-content{max-width:1260px;margin:0 auto;padding:5rem 1.5rem;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center;width:100%}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(200,169,107,.15);border:1px solid rgba(200,169,107,.4);border-radius:50px;padding:.4rem 1.2rem;margin-bottom:1.6rem;color:#E8C87A;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;box-shadow:0 4px 12px rgba(200,169,107,.1)}
-.hero-eyebrow .eye-dot{width:6px;height:6px;background:#E8C87A;border-radius:50%;box-shadow:0 0 8px #E8C87A}
-.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:1.4rem;letter-spacing:-0.02em}
+.hero{min-height:95vh;background:radial-gradient(circle at top right, #0a1f33 0%, #06121f 50%, #03080f 100%);position:relative;overflow:hidden;display:flex;align-items:center;padding-top:4rem}
+.hero-glow-t{position:absolute;left:-10%;top:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,.12) 0%,transparent 60%);filter:blur(60px);pointer-events:none}
+.hero-glow-o{position:absolute;right:-15%;bottom:-20%;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(200,169,107,.08) 0%,transparent 60%);filter:blur(60px);pointer-events:none}
+.hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.hero-gold-line{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,107,.5),transparent);opacity:.6;box-shadow:0 -5px 20px rgba(200,169,107,.2)}
+.hero-content{max-width:1320px;margin:0 auto;padding:3.5rem 1.5rem;position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:4rem;align-items:center;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:.6rem 1rem;margin-bottom:2rem;color:rgba(255,255,255,0.9);font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.4;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.hero-eyebrow .eye-dot{width:6px;height:6px;background:linear-gradient(135deg,var(--gold),#E8C87A);border-radius:50%;box-shadow:0 0 10px rgba(200,169,107,.8);margin-top:4px;flex-shrink:0}
+.hero-h1{font-family:\'Playfair Display\',serif;font-size:clamp(2.5rem, 5vw, 5rem);font-weight:800;line-height:1.1;color:#ffffff;margin-bottom:1.5rem;letter-spacing:-0.03em;position:relative}
+.hero-h1::after{content:'';position:absolute;bottom:-10px;left:0;width:80px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:3px}
 .hero-h1 .teal-word{color:#5EEAD4;text-shadow:0 0 30px rgba(94,234,212,0.3)}
 .hero-tagline{font-size:1rem;background:linear-gradient(135deg,var(--gold),#E8C87A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.6rem}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.8);line-height:1.8;max-width:520px;margin-bottom:2.5rem;font-weight:400;letter-spacing:.01em}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:.85rem 1.8rem;border-radius:50px;font-size:.9rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);letter-spacing:.02em;position:relative;z-index:1}
-.btn-teal{background:linear-gradient(135deg, var(--teal), var(--teal-dark));color:#fff;box-shadow:0 4px 16px rgba(15,118,110,.4), inset 0 1px 1px rgba(255,255,255,0.2)}
-.btn-teal:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(15,118,110,.6), inset 0 1px 1px rgba(255,255,255,0.2)}
-.btn-crimson{background:linear-gradient(135deg, var(--crimson), var(--crimson-dark));color:#fff;box-shadow:0 4px 16px rgba(193,18,31,.4), inset 0 1px 1px rgba(255,255,255,0.2)}
-.btn-crimson:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(193,18,31,.6), inset 0 1px 1px rgba(255,255,255,0.2)}
-.btn-outline-w{background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.btn-outline-w:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,255,255,.1)}
-.hero-stats{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);max-width:520px;box-shadow:0 8px 32px rgba(0,0,0,.2)}
-.h-stat{flex:1;text-align:center;padding:1rem .5rem;position:relative}
-.h-stat+.h-stat::before{content:'';position:absolute;left:0;top:25%;bottom:25%;width:1px;background:rgba(255,255,255,.15)}
-.h-stat .sn{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#fff;display:block;line-height:1;margin-bottom:6px}
-.h-stat .sl{font-size:.7rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
-.sgold{color:var(--gold)!important}
-.hero-chips{display:flex;flex-direction:column;gap:13px}
-.chip{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:1.1rem 1.3rem;transition:var(--transition)}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:540px;margin-bottom:3rem;margin-top:2rem;font-weight:400;letter-spacing:.02em;text-shadow:0 2px 4px rgba(0,0,0,0.2)}
+.hero-btns{display:flex;flex-direction:column;gap:16px;margin-bottom:4rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:1rem 2rem;border-radius:50px;font-size:.95rem;font-weight:800;text-decoration:none;border:none;cursor:pointer;transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);letter-spacing:.04em;position:relative;z-index:1;overflow:hidden}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:skewX(-20deg);transition:none}
+.btn:hover::after{left:150%;transition:all 0.7s ease}
+.btn:hover{transform:translateY(-3px)}
+.btn-teal{background:linear-gradient(135deg, var(--teal), var(--teal-dark));color:#fff;box-shadow:0 10px 30px rgba(15,118,110,.4), inset 0 1px 1px rgba(255,255,255,0.2)}
+.btn-teal:hover{box-shadow:0 15px 40px rgba(15,118,110,.6), inset 0 1px 1px rgba(255,255,255,0.2)}
+.btn-crimson{background:linear-gradient(135deg, var(--crimson), var(--crimson-dark));color:#fff;box-shadow:0 10px 30px rgba(193,18,31,.4), inset 0 1px 1px rgba(255,255,255,0.2)}
+.btn-crimson:hover{box-shadow:0 15px 40px rgba(193,18,31,.6), inset 0 1px 1px rgba(255,255,255,0.2)}
+.btn-outline-w{background:rgba(255,255,255,.03);color:#fff;border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-outline-w:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.4);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.hero-stats{display:grid;grid-template-columns:repeat(2, 1fr);gap:1.5rem;max-width:640px;position:relative}
+.h-stat{background:rgba(255,255,255,.02);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.5rem 1rem;text-align:center;box-shadow:0 15px 35px rgba(0,0,0,0.2);transition:all 0.4s ease;position:relative;overflow:hidden}
+.h-stat::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.05), transparent);pointer-events:none}
+.h-stat:hover{transform:translateY(-5px);border-color:rgba(200,169,107,.3);box-shadow:0 20px 40px rgba(0,0,0,0.3);background:rgba(255,255,255,.04)}
+.h-stat .sn{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:#ffffff;display:block;line-height:1;margin-bottom:8px;text-shadow:0 4px 12px rgba(0,0,0,0.3)}
+.h-stat .sl{font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+.sgold{background:linear-gradient(135deg,var(--gold),#E8C87A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none!important}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;z-index:2;padding:2rem}
+.hero-visual::before{content:'';position:absolute;inset:1.5rem;border:1px solid rgba(200,169,107,.3);border-radius:30px;z-index:-1;transform:rotate(3deg);transition:all 0.5s ease}
+.hero-visual::after{content:'✦ Accreditation: NABH / NABL';position:absolute;bottom:0.5rem;left:-0.5rem;background:rgba(15,118,110,0.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(15,118,110,0.3);color:#5EEAD4;font-size:0.75rem;font-weight:800;padding:0.8rem 1.6rem;border-radius:50px;letter-spacing:0.15em;text-transform:uppercase;box-shadow:0 15px 35px rgba(0,0,0,0.2);z-index:3;animation:float 6s ease-in-out infinite}
+.hero-visual img{width:100%;max-width:650px;aspect-ratio:16/10;object-fit:cover;border-radius:30px;box-shadow:0 30px 60px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1);position:relative;z-index:2;transition:all 0.5s ease}
+.hero-visual:hover::before{transform:rotate(5deg) translate(10px, -10px);border-color:rgba(200,169,107,.6)}
+.hero-visual:hover img{transform:translateY(-10px) scale(1.02);box-shadow:0 40px 70px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.2)}
+@keyframes float { 0% { transform:translateY(0); } 50% { transform:translateY(-10px); } 100% { transform:translateY(0); } }
+.hero-chips{display:none;flex-direction:column;gap:13px}
+.chip{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:1.1rem 1.3rem;transition:var(--transition)}
 .chip:hover{background:rgba(255,255,255,.12);transform:translateX(6px);border-color:rgba(200,169,107,.3)}
 .chip-ico{width:44px;height:44px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0}
 .chip-navy{background:rgba(16,42,67,.6);border:1px solid rgba(200,169,107,.2)}
@@ -117,7 +138,7 @@ p, li { color: #475569; line-height: 1.8; }
 .sec-label{display:inline-block;font-size:.71rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem}
 .sec-label.gold-lbl{color:var(--gold-dark)}
 .sec-label.orchid-lbl{color:var(--orchid)}
-.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.45rem);font-weight:700;color:var(--navy);line-height:1.22;margin-bottom:.8rem}
+.sec-h2{font-family:\'Playfair Display\',serif;font-size:clamp(2rem, 4vw, 3.5rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:.8rem}
 .sec-sub{font-size:1rem;color:var(--gray-500);line-height:1.75;max-width:580px}
 .sec-hdr{margin-bottom:3.5rem}
 .sec-hdr.center{text-align:center}
@@ -127,7 +148,7 @@ p, li { color: #475569; line-height: 1.8; }
 
 /* ABOUT */
 .about-wrap{background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center}
 .about-visual{position:relative;padding-bottom:40px}
 .about-img{width:100%;aspect-ratio:5/4;border-radius:var(--r-xl);background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 50%,var(--teal-dark) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .about-img-inner{text-align:center;color:rgba(255,255,255,.7);font-size:.9rem}
@@ -139,7 +160,7 @@ p, li { color: #475569; line-height: 1.8; }
 .ab-val{font-size:.9rem;font-weight:700;color:var(--navy)}
 .about-text p{font-size:1.05rem;color:#475569;line-height:1.85;margin-bottom:1.25rem;font-weight:400}
 .about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2rem}
-.av-item{background:rgba(248,250,252,0.6);backdrop-filter:blur(8px);border:1px solid rgba(226,232,240,0.8);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:12px;transition:all 0.3s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,1), 0 2px 4px rgba(0,0,0,0.02)}
+.av-item{background:rgba(248,250,252,0.6);backdrop-filter:blur(8px);border:1px solid rgba(226,232,240,0.8);border-radius:12px;padding:0.75rem 0.6rem;display:flex;align-items:center;gap:8px;transition:all 0.3s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,1), 0 2px 4px rgba(0,0,0,0.02)}
 .av-item:hover{border-color:rgba(15,118,110,0.3);background:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,1), 0 8px 16px rgba(15,118,110,0.06);transform:translateY(-2px)}
 .av-ico{width:36px;height:36px;border-radius:50%;background:rgba(20,184,166,0.1);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;box-shadow:0 0 12px rgba(20,184,166,0.15)}
 .av-text{font-size:.9rem;font-weight:700;color:var(--navy-deep);letter-spacing:0.01em}
@@ -147,14 +168,14 @@ p, li { color: #475569; line-height: 1.8; }
 /* STATS */
 .stats-bar{background:linear-gradient(100deg,var(--navy-deep) 0%,var(--navy) 60%,#0D3329 100%);padding:2.75rem 1.5rem;border-top:3px solid var(--gold);position:relative;overflow:hidden}
 .stats-bar::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 150%,rgba(15,118,110,.15) 0%,transparent 70%)}
-.stats-grid{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;position:relative;z-index:1}
+.stats-grid{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;position:relative;z-index:1}
 .stat{text-align:center;padding:.5rem;position:relative}
-.stat+.stat::before{content:'';position:absolute;left:0;top:10%;bottom:10%;width:1px;background:rgba(200,169,107,.2)}
-.stat .snum{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:700;color:#fff;display:block;line-height:1}
-.stat .slbl{font-size:.73rem;color:rgba(255,255,255,.5);margin-top:6px;text-transform:uppercase;letter-spacing:.07em}
+.stat+.stat::before{content:'';position:absolute;left:0;top:10%;bottom:10%;width:1px;background:rgba(200,169,107,.2);display:none}
+.stat .snum{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;display:block;line-height:1}
+.stat .slbl{font-size:.65rem;color:rgba(255,255,255,.5);margin-top:6px;text-transform:uppercase;letter-spacing:.07em}
 
 /* FACILITIES */
-.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.5rem;align-items:stretch}
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;align-items:stretch}
 .fac-card{background:var(--white);border:1px solid transparent;border-radius:16px;padding:2rem 1.4rem;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.03);display:flex;flex-direction:column;height:100%}
 .fac-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal-mid));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease}
 .fac-card:hover{box-shadow:0 20px 40px rgba(15,118,110,0.08);transform:translateY(-6px);border-color:rgba(15,118,110,0.1)}
@@ -192,20 +213,20 @@ p, li { color: #475569; line-height: 1.8; }
 .emr-ico{font-size:2rem;margin-bottom:.8rem}
 .emr-name{font-size:.97rem;font-weight:700;color:#fff;margin-bottom:.4rem}
 .emr-desc{font-size:.8rem;color:rgba(255,255,255,.7);line-height:1.62}
-.ambulance-strip{margin-top:2rem;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-md);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.ambulance-strip{margin-top:2rem;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-md);padding:1.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;flex-wrap:wrap}
 .amb-ico{font-size:2.6rem}
 .amb-h{font-size:1.05rem;font-weight:700;color:#fff}
 .amb-sub{font-size:.83rem;color:rgba(255,255,255,.65);margin-top:3px}
-.amb-nums{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+.amb-nums{margin-left:0;justify-content:center;display:flex;gap:10px;flex-wrap:wrap}
 .emr-call-btn{background:#fff;color:var(--crimson);border:none;border-radius:var(--r-sm);padding:.65rem 1.35rem;font-size:.88rem;font-weight:700;text-decoration:none;cursor:pointer;transition:var(--transition);white-space:nowrap}
 .emr-call-btn:hover{background:var(--crimson-light);transform:scale(1.04)}
 
 /* INSURANCE */
-.ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
-.ins-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:1.3rem 1rem;text-align:center;transition:var(--transition)}
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ins-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:.8rem .5rem;text-align:center;transition:var(--transition)}
 .ins-card:hover{box-shadow:var(--shadow-md);border-color:var(--teal);transform:translateY(-3px)}
-.ins-logo{width:50px;height:50px;border-radius:50%;margin:0 auto .85rem;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff}
-.ins-name{font-size:.8rem;font-weight:700;color:var(--navy)}
+.ins-logo{width:36px;height:36px;border-radius:50%;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#fff}
+.ins-name{font-size:.75rem;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:2px}
 .ins-type{font-size:.7rem;color:var(--teal);font-weight:600;margin-top:3px}
 .cashless-notice{margin-top:2.5rem;background:linear-gradient(135deg,var(--teal-pale),var(--gold-pale));border:1px solid rgba(200,169,107,.25);border-radius:var(--r-md);padding:1.35rem 1.75rem;display:flex;align-items:center;gap:14px}
 .cn-icon{font-size:1.6rem}
@@ -224,8 +245,8 @@ p, li { color: #475569; line-height: 1.8; }
 .spec-body{position:relative;z-index:2;padding:2rem;background:linear-gradient(transparent,rgba(0,0,0,.65));width:100%}
 .spec-eng{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.3rem}
 .spec-hindi{font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:.8rem;font-weight:300}
-.spec-list{display:flex;flex-direction:column;gap:5px}
-.spec-list span{font-size:.8rem;color:rgba(255,255,255,.72);padding-left:1rem;position:relative}
+.spec-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}
+.spec-list span{font-size:.7rem;color:rgba(255,255,255,.72);padding-left:.8rem;position:relative}
 .spec-list span::before{content:"›";position:absolute;left:0;color:rgba(255,255,255,.45)}
 .spec-badge{display:inline-block;margin-top:1rem;padding:4px 14px;border-radius:var(--r-full);font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.12)}
 .more-specs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.85rem}
@@ -237,21 +258,21 @@ p, li { color: #475569; line-height: 1.8; }
 /* CONTACT */
 #contact { position: relative; background: #fafcff !important; overflow: hidden; }
 #contact::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 0% 0%, rgba(15,118,110,0.04) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(200,169,107,0.04) 0%, transparent 50%); pointer-events: none; z-index: 1; }
-.contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:4rem;position:relative;z-index:2}
-.cblock{background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(15,118,110,0.1);border-radius:20px;padding:2.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.02), inset 0 1px 0 rgba(255,255,255,0.8);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:3rem;position:relative;z-index:2}
+.cblock{background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(15,118,110,0.1);border-radius:20px;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.02), inset 0 1px 0 rgba(255,255,255,0.8);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);margin-bottom:1.5rem;position:relative;overflow:hidden}
 .cblock:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(15,118,110,0.06), inset 0 1px 0 rgba(255,255,255,0.8);border-color:rgba(15,118,110,0.25)}
-.cblock-title{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--navy-deep);margin-bottom:1.8rem;display:flex;align-items:center;gap:12px}
+.cblock-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--navy-deep);margin-bottom:1.2rem;display:flex;align-items:center;gap:12px}
 .cblock-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg, rgba(15,118,110,0.2), transparent)}
-.citem{display:flex;align-items:flex-start;gap:16px;margin-bottom:1.5rem}
+.citem{display:flex;align-items:flex-start;gap:16px;margin-bottom:1rem}
 .citem:last-child{margin-bottom:0}
-.c-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+.c-ico{width:44px;height:44px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
 .cblock:hover .c-ico{transform:scale(1.05);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
 .c-ico.teal{background:linear-gradient(135deg, rgba(15,118,110,0.05), rgba(15,118,110,0.12));color:var(--teal-dark);border:1px solid rgba(15,118,110,0.1)}
 .c-ico.navy{background:linear-gradient(135deg, rgba(16,42,67,0.05), rgba(16,42,67,0.12));color:var(--navy-deep);border:1px solid rgba(16,42,67,0.1)}
 .c-ico.crimson{background:linear-gradient(135deg, rgba(220,38,38,0.05), rgba(220,38,38,0.12));color:var(--crimson);border:1px solid rgba(220,38,38,0.1)}
 .c-ico.gold{background:linear-gradient(135deg, rgba(217,119,6,0.05), rgba(217,119,6,0.12));color:#d97706;border:1px solid rgba(217,119,6,0.1)}
-.c-lbl{font-size:.7rem;color:#64748b;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
-.c-val{font-size:1rem;font-weight:800;color:var(--navy-deep);line-height:1.5}
+.c-lbl{font-size:.65rem;color:#64748b;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.c-val{font-size:.9rem;font-weight:800;color:var(--navy-deep);line-height:1.5}
 .c-val a{color:var(--teal);text-decoration:none;transition:all 0.3s ease}
 .c-val a:hover{color:var(--teal-dark);text-decoration:underline}
 .c-val a.emr-link{color:var(--crimson);font-weight:800}
@@ -265,16 +286,16 @@ p, li { color: #475569; line-height: 1.8; }
 .map-link::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);transform:skewX(-20deg);transition:none}
 .map-link:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(200,169,107,.45)}
 .map-link:hover::after{left:150%;transition:all 0.7s ease}
-.appt-box{background:#ffffff;border:1px solid rgba(15,118,110,0.15);border-radius:24px;padding:3.5rem 3rem;box-shadow:0 30px 60px rgba(0,0,0,0.04), inset 0 0 0 1px rgba(255,255,255,0.8);position:relative;z-index:2}
-.appt-box::after{content:'✦ 10,000+ Patients Served';position:absolute;top:2.5rem;right:2.5rem;background:rgba(15,118,110,0.06);color:var(--teal-dark);font-size:0.65rem;font-weight:800;padding:0.5rem 1.2rem;border-radius:50px;letter-spacing:0.12em;text-transform:uppercase;border:1px solid rgba(15,118,110,0.1)}
-.appt-box h3{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--navy-deep);margin-bottom:.5rem;letter-spacing:-0.02em}
+.appt-box{background:#ffffff;border:1px solid rgba(15,118,110,0.15);border-radius:24px;padding:2rem 1.5rem;box-shadow:0 30px 60px rgba(0,0,0,0.04), inset 0 0 0 1px rgba(255,255,255,0.8);position:relative;z-index:2}
+.appt-box::after{display:none}
+.appt-box h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:var(--navy-deep);margin-bottom:.5rem;letter-spacing:-0.02em}
 .appt-sub{font-size:.95rem;color:#475569;margin-bottom:2.5rem;line-height:1.7}
-.fgroup{margin-bottom:1.5rem}
+.fgroup{margin-bottom:1rem}
 .fgroup label{display:block;font-size:.7rem;font-weight:800;color:#64748b;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.1em}
-.fgroup input,.fgroup select,.fgroup textarea{width:100%;padding:1rem 1.2rem;border:1px solid #e2e8f0;border-radius:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--navy-deep);background:#f8fafc;outline:none;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.01)}
+.fgroup input,.fgroup select,.fgroup textarea{width:100%;padding:0.8rem 1rem;border:1px solid #e2e8f0;border-radius:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--navy-deep);background:#f8fafc;outline:none;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.01)}
 .fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{background:#fff;border-color:rgba(15,118,110,0.4);box-shadow:0 0 0 4px rgba(15,118,110,0.1)}
-.fgroup textarea{resize:vertical;min-height:110px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fgroup textarea{resize:vertical;min-height:80px}
+.frow{display:grid;grid-template-columns:1fr;gap:20px}
 .btn-submit{width:100%;padding:1.2rem;border-radius:50px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.05em;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);margin-top:1.5rem;box-shadow:0 8px 24px rgba(15,118,110,.3);position:relative;overflow:hidden}
 .btn-submit::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:skewX(-20deg);transition:none}
 .btn-submit:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(15,118,110,.45)}
@@ -285,8 +306,9 @@ p, li { color: #475569; line-height: 1.8; }
 /* FOOTER */
 .footer{background:#040e18;padding:5rem 1.5rem 0}
 .footer-inner{max-width:1260px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.6fr;gap:4rem;padding-bottom:4rem}
-.footer-col h4{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#fff;margin-bottom:1.5rem}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding-bottom:4rem}
+.footer-col:first-child, .footer-col:last-child{grid-column:span 2}
+.footer-col h4{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#fff;margin-bottom:1.5rem}
 .footer-logo-img{height:56px;width:auto;max-width:220px;margin-bottom:1.5rem;display:block;filter:none;background:#ffffff;border-radius:12px;padding:6px 12px;object-fit:contain}
 .footer-brand p{font-size:.9rem;color:rgba(255,255,255,0.7);line-height:1.9;max-width:280px}
 .footer-tagline{font-size:.75rem;color:var(--gold);font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-top:.75rem;margin-bottom:.5rem}
@@ -295,15 +317,16 @@ p, li { color: #475569; line-height: 1.8; }
 .footer-links li{margin-bottom:12px}
 .footer-links a{display:inline-block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:.85rem;transition:all 0.3s ease;font-weight:500}
 .footer-links a:hover{color:var(--teal-light);transform:translateX(4px)}
-.footer-emr{background:rgba(193,18,31,.15);border:1px solid rgba(193,18,31,.3);border-radius:12px;padding:1.2rem;margin-bottom:1.2rem}
-.footer-opd{background:rgba(15,118,110,.15);border:1px solid rgba(15,118,110,.3);border-radius:12px;padding:1.2rem}
-.fe-lbl{font-size:.7rem;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;font-weight:700}
-.fe-num{font-size:1.1rem;font-weight:700;color:#FCA5A5;margin-top:4px;display:flex;align-items:center;gap:8px}
+.footer-contact-boxes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.2rem}
+.footer-emr{background:rgba(193,18,31,.15);border:1px solid rgba(193,18,31,.3);border-radius:12px;padding:.8rem;}
+.footer-opd{background:rgba(15,118,110,.15);border:1px solid rgba(15,118,110,.3);border-radius:12px;padding:.8rem;}
+.fe-lbl{font-size:.6rem;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;font-weight:700}
+.fe-num{font-size:.85rem;font-weight:700;color:#FCA5A5;margin-top:4px;display:flex;align-items:center;gap:8px}
 .fe-num a{color:inherit;text-decoration:none;transition:all 0.3s ease}
 .fe-num a:hover{color:#fff}
 .fe-num.teal-num{color:#5EEAD4}
 .footer-gold-line{height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,107,.2),transparent)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:1.5rem 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.85rem;color:rgba(255,255,255,0.7)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:1.5rem 0;display:flex;flex-direction:column;align-items:center;text-align:center;flex-wrap:wrap;gap:.75rem;font-size:.85rem;color:rgba(255,255,255,0.7)}
 .footer-bottom-links{display:flex;gap:1.5rem}
 .footer-bottom-links a{color:rgba(255,255,255,0.7);text-decoration:none;transition:all 0.3s ease;font-weight:500}
 .footer-bottom-links a:hover{color:#fff}
@@ -318,11 +341,71 @@ p, li { color: #475569; line-height: 1.8; }
 .btt.show{opacity:1}
 .btt:hover{background:var(--teal);transform:translateY(-2px)}
 
-/* RESPONSIVE */
-@media(max-width:1100px){.about-grid{gap:3rem}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){.nav-links{display:none}.hamburger{display:block}.hero-content{grid-template-columns:1fr;padding:3.5rem 1.5rem}.hero-chips{display:none}.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.spec-hero-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr;gap:1.5rem}.stat+.stat::before{display:none}}
-@media(max-width:600px){.stats-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;text-align:center}.hero-btns{flex-direction:column}.btn{justify-content:center}.ambulance-strip{flex-direction:column;text-align:center}.amb-nums{margin-left:0;justify-content:center}.frow{grid-template-columns:1fr}}
+/* RESPONSIVE MEDIA QUERIES (Mobile-First) */
+@media (min-width: 600px) {
+  .cblock-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cblock-wrapper > :first-child { grid-column: span 2; }
+  .cblock-wrapper > .map-block { grid-column: span 2; }
+  .cblock { margin-bottom: 0; }
+  .hero-btns { flex-direction: row; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .ambulance-strip { flex-direction: row; text-align: left; }
+  .amb-nums { margin-left: auto; justify-content: flex-end; }
+  .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+}
+@media (min-width: 768px) {
+  .hero-stats { grid-template-columns: repeat(4, 1fr); }
+  .frow { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+}
+@media (min-width: 900px) {
+  .nav-links { display: flex; }
+  .hamburger { display: none; }
+  .hero-chips { display: flex; flex-direction: column; }
+}
+@media (min-width: 1024px) {
+  .emergency-bar { flex-direction: row; justify-content: center; gap: 0; }
+  .emergency-bar .eb-div, .emr-vent { display: flex; }
+  .hero-eyebrow { align-items: center; padding: .5rem 1.4rem; font-size: .75rem; letter-spacing: .18em; border-radius: 50px; }
+  .hero-eyebrow .eye-dot { margin-top: 0; }
 
+  .av-item { padding: 1rem; gap: 12px; }
+  .spec-list { display: flex; flex-direction: column; gap: 5px; }
+  .spec-list span { font-size: .8rem; padding-left: 1rem; }
+  .ins-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+  .ins-card { padding: 1.3rem 1rem; }
+  .ins-logo { width: 50px; height: 50px; font-size: 1rem; margin: 0 auto .85rem; }
+  .ins-name { font-size: .8rem; line-height: 1.5; margin-bottom: 0; }
+  .ins-type { font-size: .7rem; }
+  .cblock-wrapper { display: block; }
+  .cblock { padding: 2.5rem; margin-bottom: 1.5rem; }
+  .cblock-title { font-size: .8rem; margin-bottom: 1.8rem; }
+  .c-ico { width: 52px; height: 52px; font-size: 1.3rem; }
+  .citem { margin-bottom: 1.5rem; }
+  .c-lbl { font-size: .7rem; }
+  .c-val { font-size: 1rem; }
+  .footer-contact-boxes { display: block; margin-bottom: 0; }
+  .footer-emr { padding: 1.2rem; margin-bottom: 1.2rem; }
+  .footer-opd { padding: 1.2rem; }
+  .fe-lbl { font-size: .7rem; }
+  .fe-num { font-size: 1.1rem; }
+  .appt-box { padding: 3.5rem 3rem; }
+  .appt-box::after{content:'✦ 10,000+ Patients Served';position:absolute;top:2.5rem;right:2.5rem;background:rgba(15,118,110,0.06);color:var(--teal-dark);font-size:0.65rem;font-weight:800;padding:0.5rem 1.2rem;border-radius:50px;letter-spacing:0.12em;text-transform:uppercase;border:1px solid rgba(15,118,110,0.1);display:block}
+  .appt-box h3 { font-size: 2rem; }
+  .fgroup { margin-bottom: 1.5rem; }
+  .fgroup input, .fgroup select, .fgroup textarea { padding: 1rem 1.2rem; }
+  .fgroup textarea { min-height: 110px; }
+  .footer-col:first-child, .footer-col:last-child { grid-column: span 1; }
+  .footer-col h4 { font-size: .8rem; }
+  .hero-content { grid-template-columns: 1fr 1fr; padding: 4rem 2rem; gap: 6rem; }
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 1px; }
+  .stat .snum { font-size: 2.3rem; }
+  .stat .slbl { font-size: .73rem; }
+  .stat+.stat::before { display: block; }
+  .contact-grid { grid-template-columns: 1fr 1.35fr; gap: 4rem; }
+  .footer-grid { grid-template-columns: 2.2fr 1fr 1fr 1.6fr; gap: 4rem; }
+}
 /* ══ LANGUAGE SWITCHER ══════════════════════════════════════════════ */
 .lang-switcher{
   display:flex;align-items:center;
@@ -450,14 +533,16 @@ html[lang="hi"] .hero-h1 {
 <body>
 
 <div class="emergency-bar">
-  <span class="pulse-dot"></span>
-  🚨 <span data-i18n="emr_bar_text">24/7 Emergency Care Active</span>
+  <div class="eb-group">
+    <span class="pulse-dot"></span>
+    <i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> <span data-i18n="emr_bar_text">24/7 Emergency Care Active</span>
+  </div>
   <span class="eb-div">|</span>
-  Ambulance: <a href="tel:8877015256">8877015256</a>
+  <div class="eb-group">
+    Ambulance: <a href="tel:8877015256">8877015256</a> <span class="eb-div-inner">|</span> <a href="tel:9534919560">9534919560</a>
+  </div>
   <span class="eb-div">|</span>
-  <a href="tel:9534919560">9534919560</a>
-  <span class="eb-div">|</span>
-  <span data-i18n="emr_bar_ventilator">Ventilator-Equipped &amp; Ready</span>
+  <span class="emr-vent eb-group" data-i18n="emr_bar_ventilator">Ventilator-Equipped &amp; Ready</span>
 </div>
 
 <nav class="navbar">
@@ -473,7 +558,7 @@ html[lang="hi"] .hero-h1 {
       <li><a href="#insurance" data-i18n="nav_insurance">Insurance</a></li>
       <li><a href="#specialties" data-i18n="nav_specialties">Specialties</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-      <li><a href="#contact" class="nav-emr-btn" data-i18n="nav_emergency_btn">🚨 Emergency</a></li>
+      <li><a href="#contact" class="nav-emr-btn" data-i18n="nav_emergency_btn"><i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> Emergency</a></li>
       <li><a href="#contact" class="nav-cta-btn" data-i18n="nav_book">Book Appointment</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px;">
@@ -487,14 +572,14 @@ html[lang="hi"] .hero-h1 {
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#home" onclick="closeMenu()" data-i18n="mob_home">🏠 Home</a>
-    <a href="#about" onclick="closeMenu()" data-i18n="mob_about">🏥 About Us</a>
-    <a href="#facilities" onclick="closeMenu()" data-i18n="mob_facilities">⚕️ Facilities</a>
-    <a href="#emergency" onclick="closeMenu()" data-i18n="mob_emergency">🚨 Emergency</a>
-    <a href="#insurance" onclick="closeMenu()" data-i18n="mob_insurance">🛡️ Insurance</a>
-    <a href="#specialties" onclick="closeMenu()" data-i18n="mob_specialties">🩺 Specialties</a>
-    <a href="#contact" onclick="closeMenu()" data-i18n="mob_contact">📍 Contact</a>
-    <a href="#contact" onclick="closeMenu()" data-i18n="mob_book">📅 Book Appointment →</a>
+    <a href="#home" onclick="closeMenu()" data-i18n="mob_home"><i data-lucide="home" class="lucide-sm"></i> Home</a>
+    <a href="#about" onclick="closeMenu()" data-i18n="mob_about"><i data-lucide="building-2" class="lucide-sm"></i> About Us</a>
+    <a href="#facilities" onclick="closeMenu()" data-i18n="mob_facilities"><i data-lucide="stethoscope" class="lucide-sm"></i> Facilities</a>
+    <a href="#emergency" onclick="closeMenu()" data-i18n="mob_emergency"><i data-lucide="shield-alert" class="lucide-sm"></i> Emergency</a>
+    <a href="#insurance" onclick="closeMenu()" data-i18n="mob_insurance"><i data-lucide="shield-check" class="lucide-sm"></i> Insurance</a>
+    <a href="#specialties" onclick="closeMenu()" data-i18n="mob_specialties"><i data-lucide="activity" class="lucide-sm"></i> Specialties</a>
+    <a href="#contact" onclick="closeMenu()" data-i18n="mob_contact"><i data-lucide="map-pin" class="lucide-sm"></i> Contact</a>
+    <a href="#contact" onclick="closeMenu()" data-i18n="mob_book"><i data-lucide="calendar-check" class="lucide-sm"></i> Book Appointment →</a>
   </div>
 </nav>
 
@@ -506,15 +591,15 @@ html[lang="hi"] .hero-h1 {
       <h1 class="hero-h1" data-i18n="hero_h1">Healing Lives, Building Trust</h1>
       <p class="hero-sub" data-i18n="hero_sub">Begusarai Multispeciality Hospital Pvt. Ltd. — equipped with modern ICU, NICU, Operation Theatre, and 24/7 emergency services. Serving Mahmadpur, Ward No. 38 and beyond.</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn btn-teal" data-i18n="hero_btn_appt">📅 Book Appointment</a>
-        <a href="tel:8877015256" class="btn btn-crimson" data-i18n="hero_btn_emr">🚨 Emergency Now</a>
+        <a href="#contact" class="btn btn-teal" data-i18n="hero_btn_appt"><i data-lucide="calendar-check" class="lucide-sm"></i> Book Appointment</a>
+        <a href="tel:8877015256" class="btn btn-crimson" data-i18n="hero_btn_emr"><i data-lucide="shield-alert" class="lucide-sm"></i> Emergency Now</a>
         <a href="#facilities" class="btn btn-outline-w" data-i18n="hero_btn_fac">View Facilities →</a>
       </div>
       <div class="hero-stats">
         <div class="h-stat"><span class="sn">24/7</span><div class="sl" data-i18n="stat_emergency">Emergency</div></div>
         <div class="h-stat"><span class="sn">15+</span><div class="sl" data-i18n="stat_insurers">Insurers</div></div>
         <div class="h-stat"><span class="sn">8+</span><div class="sl" data-i18n="stat_depts">Depts</div></div>
-        <div class="h-stat"><span class="sn sgold">5★</span><div class="sl" data-i18n="stat_care">Care</div></div>
+        <div class="h-stat"><span class="sn sgold">5<i data-lucide="star" class="lucide-sm" style="display:inline-block; margin-left:4px; margin-bottom:-2px"></i></span><div class="sl" data-i18n="stat_care">Care</div></div>
       </div>
     </div>
       <div class="hero-visual fade-up">
@@ -527,11 +612,11 @@ html[lang="hi"] .hero-h1 {
   <div class="section-inner">
     <div class="about-grid">
     <div class="hero-chips">
-      <div class="chip"><div class="chip-ico chip-crimson">🚨</div><div class="chip-label"><div class="cn" data-i18n="chip_emr">Emergency Room</div><div class="cd" data-i18n="chip_emr_sub">Cardiac · Trauma · Critical</div></div><span class="chip-badge badge-crimson">24/7</span></div>
-      <div class="chip"><div class="chip-ico chip-teal">🫀</div><div class="chip-label"><div class="cn" data-i18n="chip_icu">ICU</div><div class="cd" data-i18n="chip_icu_sub">Advanced ventilator support</div></div><span class="chip-badge badge-teal">Active</span></div>
-      <div class="chip"><div class="chip-ico chip-orchid">🍼</div><div class="chip-label"><div class="cn" data-i18n="chip_nicu">NICU</div><div class="cd" data-i18n="chip_nicu_sub">Neonatal intensive care</div></div><span class="chip-badge badge-orchid">Equipped</span></div>
-      <div class="chip"><div class="chip-ico chip-navy">🔬</div><div class="chip-label"><div class="cn" data-i18n="chip_path">Pathology Lab</div><div class="cd" data-i18n="chip_path_sub">In-house · Fast reports</div></div><span class="chip-badge badge-teal">In-house</span></div>
-      <div class="chip"><div class="chip-ico chip-navy">🏆</div><div class="chip-label"><div class="cn" data-i18n="chip_ins">15+ Insurance Partners</div><div class="cd" data-i18n="chip_ins_sub">Cashless treatment available</div></div><span class="chip-badge badge-gold">Cashless</span></div>
+      <div class="chip"><div class="chip-ico chip-crimson"><i data-lucide="shield-alert"></i></div><div class="chip-label"><div class="cn" data-i18n="chip_emr">Emergency Room</div><div class="cd" data-i18n="chip_emr_sub">Cardiac · Trauma · Critical</div></div><span class="chip-badge badge-crimson">24/7</span></div>
+      <div class="chip"><div class="chip-ico chip-teal"><i data-lucide="heart-pulse"></i></div><div class="chip-label"><div class="cn" data-i18n="chip_icu">ICU</div><div class="cd" data-i18n="chip_icu_sub">Advanced ventilator support</div></div><span class="chip-badge badge-teal">Active</span></div>
+      <div class="chip"><div class="chip-ico chip-orchid"><i data-lucide="baby"></i></div><div class="chip-label"><div class="cn" data-i18n="chip_nicu">NICU</div><div class="cd" data-i18n="chip_nicu_sub">Neonatal intensive care</div></div><span class="chip-badge badge-orchid">Equipped</span></div>
+      <div class="chip"><div class="chip-ico chip-navy"><i data-lucide="microscope"></i></div><div class="chip-label"><div class="cn" data-i18n="chip_path">Pathology Lab</div><div class="cd" data-i18n="chip_path_sub">In-house · Fast reports</div></div><span class="chip-badge badge-teal">In-house</span></div>
+      <div class="chip"><div class="chip-ico chip-navy"><i data-lucide="award"></i></div><div class="chip-label"><div class="cn" data-i18n="chip_ins">15+ Insurance Partners</div><div class="cd" data-i18n="chip_ins_sub">Cashless treatment available</div></div><span class="chip-badge badge-gold">Cashless</span></div>
     </div>
       <div class="fade-up" style="padding-top:2rem">
         <span class="sec-label" data-i18n="about_label">About Our Hospital</span>
@@ -542,10 +627,10 @@ html[lang="hi"] .hero-h1 {
           <p data-i18n="about_p2">Our hospital is equipped with state-of-the-art ICU, NICU, a fully modular Operation Theatre, a 24/7 Emergency Room, and an in-house Pathology laboratory — ensuring comprehensive care entirely under one roof.</p>
         </div>
         <div class="about-values">
-          <div class="av-item"><div class="av-ico">💛</div><span class="av-text" data-i18n="val_compassion">Compassion</span></div>
-          <div class="av-item"><div class="av-ico">🩺</div><span class="av-text" data-i18n="val_expertise">Expertise</span></div>
-          <div class="av-item"><div class="av-ico">🏆</div><span class="av-text" data-i18n="val_excellence">Excellence</span></div>
-          <div class="av-item"><div class="av-ico">🤝</div><span class="av-text" data-i18n="val_trust">Trust</span></div>
+          <div class="av-item"><div class="av-ico"><i data-lucide="heart"></i></div><span class="av-text" data-i18n="val_compassion">Compassion</span></div>
+          <div class="av-item"><div class="av-ico"><i data-lucide="stethoscope"></i></div><span class="av-text" data-i18n="val_expertise">Expertise</span></div>
+          <div class="av-item"><div class="av-ico"><i data-lucide="award"></i></div><span class="av-text" data-i18n="val_excellence">Excellence</span></div>
+          <div class="av-item"><div class="av-ico"><i data-lucide="shield-check"></i></div><span class="av-text" data-i18n="val_trust">Trust</span></div>
         </div>
         <div style="margin-top:1.75rem"><a href="#contact" class="btn btn-teal" data-i18n="about_btn">Book a Consultation →</a></div>
       </div>
@@ -571,14 +656,14 @@ html[lang="hi"] .hero-h1 {
       <p class="sec-sub" data-i18n="fac_sub">From emergency care to diagnostics — fully equipped with modern infrastructure and experienced medical staff.</p>
     </div>
     <div class="fac-grid">
-      <div class="fac-card emr-card fade-up"><div class="fac-ico ico-crimson">🚨</div><div class="fac-name" data-i18n="fcard_emr_name">Emergency Room</div><p class="fac-desc" data-i18n="fcard_emr_desc">Round-the-clock emergency care for trauma, cardiac events, and all critical conditions.</p><span class="fac-chip chip-crimson-t" data-i18n="fcard_emr_tag">24/7 Active</span></div>
-      <div class="fac-card fade-up"><div class="fac-ico ico-navy">🫀</div><div class="fac-name" data-i18n="fcard_icu_name">ICU</div><p class="fac-desc" data-i18n="fcard_icu_desc">Advanced ICU with multi-parameter monitors, ventilators, and 24/7 specialist supervision.</p><span class="fac-chip chip-navy-t" data-i18n="fcard_icu_tag">Critical Care</span></div>
-      <div class="fac-card nicu-card fade-up"><div class="fac-ico ico-orchid">🍼</div><div class="fac-name" data-i18n="fcard_nicu_name">NICU</div><p class="fac-desc" data-i18n="fcard_nicu_desc">Neonatal Intensive Care for premature and high-risk newborns with incubators and phototherapy.</p><span class="fac-chip chip-orchid-t" data-i18n="fcard_nicu_tag">Neonatology</span></div>
-      <div class="fac-card fade-up"><div class="fac-ico ico-teal">➕</div><div class="fac-name" data-i18n="fcard_ot_name">Operation Theatre</div><p class="fac-desc" data-i18n="fcard_ot_desc">Fully equipped modular OT with laminar air flow for safe surgical procedures of all types.</p><span class="fac-chip chip-teal-t" data-i18n="fcard_ot_tag">Modular OT</span></div>
-      <div class="fac-card fade-up"><div class="fac-ico ico-teal">🩺</div><div class="fac-name" data-i18n="fcard_opd_name">OPD</div><p class="fac-desc" data-i18n="fcard_opd_desc">Outpatient consultations across multiple specialties — walk-in and appointment-based.</p><span class="fac-chip chip-teal-t" data-i18n="fcard_opd_tag">Multi-specialty</span></div>
-      <div class="fac-card fade-up"><div class="fac-ico ico-navy">🔬</div><div class="fac-name" data-i18n="fcard_path_name">Pathology Lab</div><p class="fac-desc" data-i18n="fcard_path_desc">In-house diagnostic laboratory for blood tests, cultures, and emergency reports with fast turnaround.</p><span class="fac-chip chip-navy-t" data-i18n="fcard_path_tag">In-house</span></div>
-      <div class="fac-card premium fade-up"><div class="fac-ico ico-gold">💊</div><div class="fac-name" data-i18n="fcard_pharma_name">Pharmacy</div><p class="fac-desc" data-i18n="fcard_pharma_desc">24-hour in-hospital pharmacy with all prescription medicines. Inpatient discounts available.</p><span class="fac-chip chip-gold-t" data-i18n="fcard_pharma_tag">24/7 Open</span></div>
-      <div class="fac-card premium fade-up"><div class="fac-ico ico-gold">🛏️</div><div class="fac-name" data-i18n="fcard_ward_name">Premium Wards</div><p class="fac-desc" data-i18n="fcard_ward_desc">Deluxe, Special, and General ward options — clean, comfortable, and well-maintained.</p><span class="fac-chip chip-gold-t" data-i18n="fcard_ward_tag">Deluxe Available</span></div>
+      <div class="fac-card emr-card fade-up"><div class="fac-ico ico-crimson"><i data-lucide="alert-triangle"></i></div><div class="fac-name" data-i18n="fcard_emr_name">Emergency Room</div><p class="fac-desc" data-i18n="fcard_emr_desc">Round-the-clock emergency care for trauma, cardiac events, and all critical conditions.</p><span class="fac-chip chip-crimson-t" data-i18n="fcard_emr_tag">24/7 Active</span></div>
+      <div class="fac-card fade-up"><div class="fac-ico ico-navy"><i data-lucide="heart-pulse"></i></div><div class="fac-name" data-i18n="fcard_icu_name">ICU</div><p class="fac-desc" data-i18n="fcard_icu_desc">Advanced ICU with multi-parameter monitors, ventilators, and 24/7 specialist supervision.</p><span class="fac-chip chip-navy-t" data-i18n="fcard_icu_tag">Critical Care</span></div>
+      <div class="fac-card nicu-card fade-up"><div class="fac-ico ico-orchid"><i data-lucide="baby"></i></div><div class="fac-name" data-i18n="fcard_nicu_name">NICU</div><p class="fac-desc" data-i18n="fcard_nicu_desc">Neonatal Intensive Care for premature and high-risk newborns with incubators and phototherapy.</p><span class="fac-chip chip-orchid-t" data-i18n="fcard_nicu_tag">Neonatology</span></div>
+      <div class="fac-card fade-up"><div class="fac-ico ico-teal"><i data-lucide="plus-square"></i></div><div class="fac-name" data-i18n="fcard_ot_name">Operation Theatre</div><p class="fac-desc" data-i18n="fcard_ot_desc">Fully equipped modular OT with laminar air flow for safe surgical procedures of all types.</p><span class="fac-chip chip-teal-t" data-i18n="fcard_ot_tag">Modular OT</span></div>
+      <div class="fac-card fade-up"><div class="fac-ico ico-teal"><i data-lucide="stethoscope"></i></div><div class="fac-name" data-i18n="fcard_opd_name">OPD</div><p class="fac-desc" data-i18n="fcard_opd_desc">Outpatient consultations across multiple specialties — walk-in and appointment-based.</p><span class="fac-chip chip-teal-t" data-i18n="fcard_opd_tag">Multi-specialty</span></div>
+      <div class="fac-card fade-up"><div class="fac-ico ico-navy"><i data-lucide="microscope"></i></div><div class="fac-name" data-i18n="fcard_path_name">Pathology Lab</div><p class="fac-desc" data-i18n="fcard_path_desc">In-house diagnostic laboratory for blood tests, cultures, and emergency reports with fast turnaround.</p><span class="fac-chip chip-navy-t" data-i18n="fcard_path_tag">In-house</span></div>
+      <div class="fac-card premium fade-up"><div class="fac-ico ico-gold"><i data-lucide="pill"></i></div><div class="fac-name" data-i18n="fcard_pharma_name">Pharmacy</div><p class="fac-desc" data-i18n="fcard_pharma_desc">24-hour in-hospital pharmacy with all prescription medicines. Inpatient discounts available.</p><span class="fac-chip chip-gold-t" data-i18n="fcard_pharma_tag">24/7 Open</span></div>
+      <div class="fac-card premium fade-up"><div class="fac-ico ico-gold"><i data-lucide="bed"></i></div><div class="fac-name" data-i18n="fcard_ward_name">Premium Wards</div><p class="fac-desc" data-i18n="fcard_ward_desc">Deluxe, Special, and General ward options — clean, comfortable, and well-maintained.</p><span class="fac-chip chip-gold-t" data-i18n="fcard_ward_tag">Deluxe Available</span></div>
     </div>
   </div>
 </section>
@@ -592,7 +677,7 @@ html[lang="hi"] .hero-h1 {
       <p class="sec-sub" style="color:rgba(255,255,255,.7)" data-i18n="emr_sub">Our 24/7 emergency team handles all critical conditions with speed and precision. Ventilator-equipped ambulance on call.</p>
     </div>
     <div class="emr-grid">
-      <div class="emr-card fade-up"><div class="emr-ico">🫀</div><div class="emr-name" data-i18n="emr_cardiac">Cardiac Emergencies</div><p class="emr-desc" data-i18n="emr_cardiac_desc">Heart attack, chest pain, arrhythmia — immediate cardiac monitoring and intervention.</p></div>
+      <div class="emr-card fade-up"><div class="emr-ico"><i data-lucide="heart-pulse"></i></div><div class="emr-name" data-i18n="emr_cardiac">Cardiac Emergencies</div><p class="emr-desc" data-i18n="emr_cardiac_desc">Heart attack, chest pain, arrhythmia — immediate cardiac monitoring and intervention.</p></div>
       <div class="emr-card fade-up"><div class="emr-ico">🚗</div><div class="emr-name" data-i18n="emr_accident">Road Accident Trauma</div><p class="emr-desc" data-i18n="emr_accident_desc">Fractures, head injuries, internal bleeding — full trauma care with emergency surgery.</p></div>
       <div class="emr-card fade-up"><div class="emr-ico">🐍</div><div class="emr-name" data-i18n="emr_bite">Snake / Dog Bite</div><p class="emr-desc" data-i18n="emr_bite_desc">Anti-venom, wound management, and anti-rabies protocol administered immediately.</p></div>
       <div class="emr-card fade-up"><div class="emr-ico">🔥</div><div class="emr-name" data-i18n="emr_burns">Burns Treatment</div><p class="emr-desc" data-i18n="emr_burns_desc">Emergency care for chemical, thermal and electrical burns with wound care and ICU support.</p></div>
@@ -602,8 +687,8 @@ html[lang="hi"] .hero-h1 {
       <div class="amb-ico">🚑</div>
       <div><div class="amb-h" data-i18n="amb_h">Ventilator Ambulance — Available 24 Hours</div><div class="amb-sub" data-i18n="amb_sub">Equipped with ventilator · Oxygen · Defibrillator · Serving Begusarai and surrounding districts</div></div>
       <div class="amb-nums">
-        <a href="tel:8877015256" class="emr-call-btn">📞 8877015256</a>
-        <a href="tel:9534919560" class="emr-call-btn">📞 9534919560</a>
+        <a href="tel:8877015256" class="emr-call-btn"><i data-lucide="phone" class="lucide-sm"></i> 8877015256</a>
+        <a href="tel:9534919560" class="emr-call-btn"><i data-lucide="phone" class="lucide-sm"></i> 9534919560</a>
       </div>
     </div>
   </div>
@@ -665,7 +750,7 @@ html[lang="hi"] .hero-h1 {
         </div>
       </div>
       <div class="spec-card spec-med fade-up">
-        <div class="spec-gold-top"></div><div class="spec-deco">🩺</div>
+        <div class="spec-gold-top"></div><div class="spec-deco"><i data-lucide="stethoscope"></i></div>
         <div class="spec-body">
           <div class="spec-eng" data-i18n="spec_med">Medicine</div>
           <div class="spec-hindi">जनरल मेडिसिन विभाग</div>
@@ -694,14 +779,14 @@ html[lang="hi"] .hero-h1 {
       </div>
     </div>
     <div class="more-specs-grid">
-      <div class="ms-chip fade-up"><span class="ms-ico">🫀</span><span class="ms-lbl" data-i18n="ms_gm">General Medicine</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">🧒</span><span class="ms-lbl" data-i18n="ms_ped">Paediatrics</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">🦴</span><span class="ms-lbl" data-i18n="ms_ortho">Orthopaedics</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">✂️</span><span class="ms-lbl" data-i18n="ms_surg">General Surgery</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">🧠</span><span class="ms-lbl" data-i18n="ms_neuro">Neurology</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">🩻</span><span class="ms-lbl" data-i18n="ms_radio">Radiology</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">👂</span><span class="ms-lbl" data-i18n="ms_ent">ENT</span></div>
-      <div class="ms-chip fade-up"><span class="ms-ico">🏃</span><span class="ms-lbl" data-i18n="ms_physio">Physiotherapy</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="heart-pulse"></i></span><span class="ms-lbl" data-i18n="ms_gm">General Medicine</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="baby"></i></span><span class="ms-lbl" data-i18n="ms_ped">Paediatrics</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="bone"></i></span><span class="ms-lbl" data-i18n="ms_ortho">Orthopaedics</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="scissors"></i></span><span class="ms-lbl" data-i18n="ms_surg">General Surgery</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="brain"></i></span><span class="ms-lbl" data-i18n="ms_neuro">Neurology</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="activity"></i></span><span class="ms-lbl" data-i18n="ms_radio">Radiology</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="ear"></i></span><span class="ms-lbl" data-i18n="ms_ent">ENT</span></div>
+      <div class="ms-chip fade-up"><span class="ms-ico"><i data-lucide="activity"></i></span><span class="ms-lbl" data-i18n="ms_physio">Physiotherapy</span></div>
     </div>
   </div>
 </section>
@@ -715,24 +800,24 @@ html[lang="hi"] .hero-h1 {
       <p class="sec-sub" data-i18n="con_sub">Reach out by phone, WhatsApp, or use the form below. Our team responds promptly to every enquiry.</p>
     </div>
     <div class="contact-grid">
-      <div>
+      <div class="cblock-wrapper">
         <div class="cblock fade-up">
-          <div class="cblock-title" data-i18n="con_phones">📞 Phone Numbers</div>
-          <div class="citem"><div class="c-ico crimson">🚨</div><div><div class="c-lbl" data-i18n="con_emr_lbl">Emergency 24/7</div><div class="c-val"><a href="tel:8877015256" class="emr-link">8877015256</a> / <a href="tel:9534919560" class="emr-link">9534919560</a></div></div></div>
-          <div class="citem"><div class="c-ico teal">📱</div><div><div class="c-lbl" data-i18n="con_opd_lbl">General / OPD / Admin</div><div class="c-val"><a href="tel:8298307708">8298307708</a></div></div></div>
+          <div class="cblock-title" data-i18n="con_phones"><i data-lucide="phone" class="lucide-sm"></i> Phone Numbers</div>
+          <div class="citem"><div class="c-ico crimson"><i data-lucide="alert-triangle"></i></div><div><div class="c-lbl" data-i18n="con_emr_lbl">Emergency 24/7</div><div class="c-val"><a href="tel:8877015256" class="emr-link">8877015256</a> / <a href="tel:9534919560" class="emr-link">9534919560</a></div></div></div>
+          <div class="citem"><div class="c-ico teal"><i data-lucide="smartphone"></i></div><div><div class="c-lbl" data-i18n="con_opd_lbl">General / OPD / Admin</div><div class="c-val"><a href="tel:8298307708">8298307708</a></div></div></div>
         </div>
         <div class="cblock fade-up">
-          <div class="cblock-title" data-i18n="con_location">📍 Location</div>
-          <div class="citem"><div class="c-ico navy">🏥</div><div><div class="c-lbl" data-i18n="con_addr_lbl">Hospital Address</div><div class="c-val" data-i18n="con_addr_val">Mahmadpur, Ward No. 38,<br>Begusarai, Bihar, India</div></div></div>
-          <div class="citem"><div class="c-ico gold">🪪</div><div><div class="c-lbl" data-i18n="con_rohini_lbl">ROHINI Registration</div><div class="c-val">ID: 8900080650-596</div></div></div>
+          <div class="cblock-title" data-i18n="con_location"><i data-lucide="map-pin" class="lucide-sm"></i> Location</div>
+          <div class="citem"><div class="c-ico navy"><i data-lucide="hospital"></i></div><div><div class="c-lbl" data-i18n="con_addr_lbl">Hospital Address</div><div class="c-val" data-i18n="con_addr_val">Mahmadpur, Ward No. 38,<br>Begusarai, Bihar, India</div></div></div>
+          <div class="citem"><div class="c-ico gold"><i data-lucide="id-card"></i></div><div><div class="c-lbl" data-i18n="con_rohini_lbl">ROHINI Registration</div><div class="c-val">ID: 8900080650-596</div></div></div>
         </div>
         <div class="cblock fade-up">
-          <div class="cblock-title" data-i18n="con_hours">⏰ Working Hours</div>
-          <div class="citem"><div class="c-ico teal">🌞</div><div><div class="c-lbl" data-i18n="con_opd_time_lbl">OPD Timings</div><div class="c-val" data-i18n="con_opd_time_val">Mon-Sat: 8AM-2PM and 5PM-9PM</div></div></div>
-          <div class="citem"><div class="c-ico crimson">🌙</div><div><div class="c-lbl" data-i18n="con_emr_dept_lbl">Emergency Department</div><div class="c-val" data-i18n="con_emr_time_val">24 Hours · 7 Days · 365 Days</div></div></div>
+          <div class="cblock-title" data-i18n="con_hours"><i data-lucide="clock" class="lucide-sm"></i> Working Hours</div>
+          <div class="citem"><div class="c-ico teal"><i data-lucide="sun"></i></div><div><div class="c-lbl" data-i18n="con_opd_time_lbl">OPD Timings</div><div class="c-val" data-i18n="con_opd_time_val">Mon-Sat: 8AM-2PM and 5PM-9PM</div></div></div>
+          <div class="citem"><div class="c-ico crimson"><i data-lucide="moon"></i></div><div><div class="c-lbl" data-i18n="con_emr_dept_lbl">Emergency Department</div><div class="c-val" data-i18n="con_emr_time_val">24 Hours · 7 Days · 365 Days</div></div></div>
         </div>
         <div class="map-block fade-up">
-          <div class="map-pin-icon">📍</div>
+          <div class="map-pin-icon"><i data-lucide="map-pin"></i></div>
           <div class="map-lbl" data-i18n="map_lbl">Begusarai Multispeciality Hospital Pvt. Ltd.</div>
           <div class="map-addr">Mahmadpur, Ward No. 38<br>Begusarai, Bihar, India</div>
           <a href="https://maps.google.com/?q=Begusarai+Multispeciality+Hospital+Mahmadpur+Ward+38+Begusarai+Bihar" target="_blank" class="map-link" data-i18n="map_btn">🗺️ Open Google Maps</a>
@@ -796,14 +881,16 @@ html[lang="hi"] .hero-h1 {
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer_emr_h">Emergency Helpline</h4>
-        <div class="footer-emr">
-          <div class="fe-lbl" data-i18n="footer_emr_lbl">Emergency 24/7</div>
-          <div class="fe-num"><a href="tel:8877015256">📞 8877015256</a></div>
-          <div class="fe-num" style="margin-top:4px"><a href="tel:9534919560">📞 9534919560</a></div>
-        </div>
-        <div class="footer-opd">
-          <div class="fe-lbl" data-i18n="footer_opd_lbl">General / OPD</div>
-          <div class="fe-num teal-num"><a href="tel:8298307708" style="color:inherit">📞 8298307708</a></div>
+        <div class="footer-contact-boxes">
+          <div class="footer-emr">
+            <div class="fe-lbl" data-i18n="footer_emr_lbl">Emergency 24/7</div>
+            <div class="fe-num"><a href="tel:8877015256"><i data-lucide="phone" class="lucide-sm"></i> 8877015256</a></div>
+            <div class="fe-num" style="margin-top:4px"><a href="tel:9534919560"><i data-lucide="phone" class="lucide-sm"></i> 9534919560</a></div>
+          </div>
+          <div class="footer-opd">
+            <div class="fe-lbl" data-i18n="footer_opd_lbl">General / OPD</div>
+            <div class="fe-num teal-num"><a href="tel:8298307708" style="color:inherit"><i data-lucide="phone" class="lucide-sm"></i> 8298307708</a></div>
+          </div>
         </div>
         <div style="margin-top:1rem;font-size:.77rem;color:rgba(255,255,255,.65);line-height:1.65" data-i18n="footer_addr">Mahmadpur, Ward No. 38,<br>Begusarai, Bihar, India</div>
       </div>
@@ -863,12 +950,12 @@ const TRANSLATIONS = {
     nav_home: "Home", nav_about: "About", nav_facilities: "Facilities",
     nav_emergency: "Emergency", nav_insurance: "Insurance",
     nav_specialties: "Specialties", nav_contact: "Contact",
-    nav_emergency_btn: "🚨 Emergency", nav_book: "Book Appointment",
+    nav_emergency_btn: '<i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> Emergency', nav_book: "Book Appointment",
 
     /* Mobile menu */
     mob_home: "🏠 Home", mob_about: "🏥 About Us", mob_facilities: "⚕️ Facilities",
-    mob_emergency: "🚨 Emergency", mob_insurance: "🛡️ Insurance",
-    mob_specialties: "🩺 Specialties", mob_contact: "📍 Contact",
+    mob_emergency: '<i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> Emergency', mob_insurance: "🛡️ Insurance",
+    mob_specialties: '<i data-lucide="stethoscope" class="lucide-sm"></i> Specialties', mob_contact: '<i data-lucide="map-pin" class="lucide-sm"></i> Contact',
     mob_book: "📅 Book Appointment →",
 
     /* Hero */
@@ -876,7 +963,7 @@ const TRANSLATIONS = {
     hero_h1: "Healing Lives, Building Trust",
     hero_sub: "Begusarai Multispeciality Hospital Pvt. Ltd. — equipped with modern ICU, NICU, Operation Theatre, and 24/7 emergency services. Serving Mahmadpur, Ward No. 38 and beyond.",
     hero_btn_appt: "📅 Book Appointment",
-    hero_btn_emr: "🚨 Emergency Now",
+    hero_btn_emr: '<i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> Emergency Now',
     hero_btn_fac: "View Facilities →",
     stat_emergency: "Emergency", stat_insurers: "Insurers",
     stat_depts: "Depts", stat_care: "Care",
@@ -955,12 +1042,12 @@ const TRANSLATIONS = {
     con_label: "Contact &amp; Appointments",
     con_h2: "Visit Us or Book<br>an Appointment",
     con_sub: "Reach out by phone, WhatsApp, or use the form below. Our team responds promptly to every enquiry.",
-    con_phones: "📞 Phone Numbers", con_emr_lbl: "Emergency 24/7",
+    con_phones: '<i data-lucide="phone" class="lucide-sm"></i> Phone Numbers', con_emr_lbl: "Emergency 24/7",
     con_opd_lbl: "General / OPD / Admin",
-    con_location: "📍 Location", con_addr_lbl: "Hospital Address",
+    con_location: '<i data-lucide="map-pin" class="lucide-sm"></i> Location', con_addr_lbl: "Hospital Address",
     con_addr_val: "Mahmadpur, Ward No. 38,<br>Begusarai, Bihar, India",
     con_rohini_lbl: "ROHINI Registration",
-    con_hours: "⏰ Working Hours", con_opd_time_lbl: "OPD Timings",
+    con_hours: '<i data-lucide="clock" class="lucide-sm"></i> Working Hours', con_opd_time_lbl: "OPD Timings",
     con_opd_time_val: "Mon-Sat: 8AM-2PM and 5PM-9PM",
     con_emr_dept_lbl: "Emergency Department",
     con_emr_time_val: "24 Hours · 7 Days · 365 Days",
@@ -1018,21 +1105,21 @@ const TRANSLATIONS = {
     nav_home: "होम", nav_about: "परिचय", nav_facilities: "सुविधाएँ",
     nav_emergency: "आपातकाल", nav_insurance: "बीमा",
     nav_specialties: "विशेषताएँ", nav_contact: "संपर्क",
-    nav_emergency_btn: "🚨 आपातकाल", nav_book: "अपॉइंटमेंट बुक करें",
+    nav_emergency_btn: '<i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> आपातकाल', nav_book: "अपॉइंटमेंट बुक करें",
 
     /* Mobile menu */
     mob_home: "🏠 होम", mob_about: "🏥 हमारे बारे में", mob_facilities: "⚕️ सुविधाएँ",
-    mob_emergency: "🚨 आपातकाल", mob_insurance: "🛡️ बीमा",
-    mob_specialties: "🩺 विशेषताएँ", mob_contact: "📍 संपर्क",
+    mob_emergency: '<i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> आपातकाल', mob_insurance: "🛡️ बीमा",
+    mob_specialties: '<i data-lucide="stethoscope" class="lucide-sm"></i> विशेषताएँ', mob_contact: '<i data-lucide="map-pin" class="lucide-sm"></i> संपर्क',
     mob_book: "📅 अपॉइंटमेंट बुक करें →",
 
     /* Hero */
-    hero_eyebrow: "बेगूसराय · बिहार · प्रीमियम मल्टी-स्पेशलिटी",
+    hero_eyebrow: "बेगूसराय · बिहार · सर्वश्रेष्ठ मल्टी-स्पेशलिटी केयर अस्पताल",
     hero_tagline: "जीवन को स्वस्थ बनाएं, विश्वास बनाएं",
-    hero_h1: "आधुनिक चिकित्सा।<br>बिहार के <span class=\"teal-word\">परिवारों</span><br>का विश्वास।",
+    hero_h1: "जीवन संवारना, विश्वास बनाना",
     hero_sub: "बेगूसराय मल्टीस्पेशलिटी हॉस्पिटल प्रा.लि. — आधुनिक ICU, NICU, ऑपरेशन थियेटर और 24/7 आपातकालीन सेवाओं से सुसज्जित। महमदपुर, वार्ड नं. 38 और आसपास के क्षेत्र में सेवारत।",
     hero_btn_appt: "📅 अपॉइंटमेंट बुक करें",
-    hero_btn_emr: "🚨 अभी आपातकाल",
+    hero_btn_emr: '<i data-lucide="shield-alert" class="lucide-sm" style="color: #FECACA;"></i> अभी आपातकाल',
     hero_btn_fac: "सुविधाएँ देखें →",
     stat_emergency: "आपातकाल", stat_insurers: "बीमा कंपनियाँ",
     stat_depts: "विभाग", stat_care: "देखभाल",
@@ -1111,12 +1198,12 @@ const TRANSLATIONS = {
     con_label: "संपर्क एवं अपॉइंटमेंट",
     con_h2: "हमसे मिलें या<br>अपॉइंटमेंट बुक करें",
     con_sub: "फोन, WhatsApp या नीचे दिए गए फॉर्म के माध्यम से संपर्क करें। हमारी टीम हर पूछताछ का तुरंत जवाब देती है।",
-    con_phones: "📞 फोन नंबर", con_emr_lbl: "आपातकाल 24/7",
+    con_phones: '<i data-lucide="phone" class="lucide-sm"></i> फोन नंबर', con_emr_lbl: "आपातकाल 24/7",
     con_opd_lbl: "सामान्य / OPD / प्रशासन",
-    con_location: "📍 स्थान", con_addr_lbl: "अस्पताल का पता",
+    con_location: '<i data-lucide="map-pin" class="lucide-sm"></i> स्थान', con_addr_lbl: "अस्पताल का पता",
     con_addr_val: "महमदपुर, वार्ड नं. 38,<br>बेगूसराय, बिहार, भारत",
     con_rohini_lbl: "रोहिणी पंजीकरण",
-    con_hours: "⏰ कार्य समय", con_opd_time_lbl: "OPD समय",
+    con_hours: '<i data-lucide="clock" class="lucide-sm"></i> कार्य समय', con_opd_time_lbl: "OPD समय",
     con_opd_time_val: "सोम-शनि: सुबह 8-2 बजे और शाम 5-9 बजे",
     con_emr_dept_lbl: "आपातकालीन विभाग",
     con_emr_time_val: "24 घंटे · सप्ताह के 7 दिन · 365 दिन",
@@ -1281,6 +1368,8 @@ function applyTranslations() {
     });
   });
 
+  lucide.createIcons();
+
   /* 5. Footer bottom links */
   var bottomLinks = document.querySelectorAll('.footer-bottom-links a');
   if (bottomLinks[0]) bottomLinks[0].innerHTML = T['footer_privacy'] || 'Privacy Policy';
@@ -1326,5 +1415,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 </body>
 </html>
